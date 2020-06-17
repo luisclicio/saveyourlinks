@@ -29,19 +29,19 @@ module.exports = (req, res) => {
     .then((data) => {
       const db = new sqlite3.Database('db/links.db', (err) => {
         if (err) return console.error(err.message);
-        console.log('Add: Connected to the links database.');
+        console.log('\nConnected');
       });
 
       const sql = `INSERT INTO links_saved (url, title, description) VALUES (?, ?, ?)`;
 
       db.run(sql, data, (err) => {
         if (err) return console.log(err.message);
-        console.log(`A link saved: ${data[0]}`);
+        console.log(`Link saved: ${data[0]}`);
       });
 
       db.close((err) => {
         if (err) return console.error(err.message);
-        console.log('Close the database connection.\n');
+        console.log('Operation finished\n');
       });
 
       return res.redirect('/');

@@ -5,7 +5,7 @@ module.exports = (req, res) => {
 
   const db = new sqlite3.Database('db/links.db', sqlite3.OPEN_READONLY, (err) => {
     if (err) return console.error(err.message);
-    console.log('Search: Connected to the links database.');
+    console.log('\nConnected');
   });
 
   const sql =
@@ -26,6 +26,6 @@ module.exports = (req, res) => {
 
   db.close((err) => {
     if (err) return console.error(err.message);
-    console.log('Close the database connection.\n');
+    console.log('Operation finished\n');
   });
 }

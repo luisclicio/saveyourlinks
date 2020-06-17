@@ -1,0 +1,68 @@
+@media (max-width: 1100px) {
+  body {
+    padding: 50px;
+  }
+}
+
+@media (max-width: 760px) {
+  body {
+    padding: 0;
+  }
+
+  main {
+    box-shadow: none;
+    height: calc(100% - 50px);
+  }
+
+  form input,
+  a.button-back {
+    max-width: 180px;
+  }
+
+  ul.links {
+    padding: 0 10px 25px;
+  }
+}
+
+@media (max-width: 400px) {
+  main {
+    padding: 10px 10px 0;
+  }
+
+  header {
+    flex-direction: column;
+  }
+
+  .logo {
+    order: -1;
+  }
+
+  form {
+    width: 100%;
+  }
+
+  form input,
+  a.button-back {
+    max-width: 100%;
+  }
+
+  .search {
+    margin: 10px 0;
+  }
+
+  ul.links {
+    height: calc(100% - 150px);
+    margin-top: 10px;
+    padding: 0 10px 10px;
+  }
+
+  li.link {
+    margin-top: 10px;
+    padding: 10px 45px 10px 10px;
+  }
+
+  li.link .button-delete {
+    right: 10px;
+    top: 10px;
+  }
+}

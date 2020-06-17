@@ -3,7 +3,7 @@ const sqlite3 = require('sqlite3');
 module.exports = (req, res) => {
   const db = new sqlite3.Database('db/links.db', sqlite3.OPEN_READONLY, (err) => {
     if (err) return console.error(err.message);
-    console.log('Read: Connected to the links database.');
+    console.log('\nConnected');
   });
 
   const sql = `SELECT * FROM links_saved ORDER BY id DESC`;
@@ -15,6 +15,6 @@ module.exports = (req, res) => {
 
   db.close((err) => {
     if (err) return console.error(err.message);
-    console.log('Close the database connection.\n');
+    console.log('Operation finished\n');
   });
 }

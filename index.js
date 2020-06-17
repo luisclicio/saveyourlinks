@@ -20,7 +20,7 @@ app.use(routes);
 
 const db = new sqlite3.Database('./db/links.db', (err) => {
 	if (err) console.error(err.message);
-	console.log('Connected to the links database.');
+	console.log('\nConnected');
 });
 
 db.run(`CREATE TABLE IF NOT EXISTS links_saved(
@@ -32,7 +32,7 @@ db.run(`CREATE TABLE IF NOT EXISTS links_saved(
 
 db.close((err) => {
 	if (err) console.error(err.message);
-	console.log('Close the database connection.\n');
+	console.log('...\n');
 });
 
 app.listen(PORT, (err) => {

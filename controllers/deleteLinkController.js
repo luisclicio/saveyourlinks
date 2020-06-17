@@ -5,19 +5,19 @@ module.exports = (req, res) => {
 
   const db = new sqlite3.Database('db/links.db', (err) => {
     if (err) return console.error(err.message);
-    console.log('Delete: Connected to the links database.');
+    console.log('\nConnected');
   });
 
   const sql = `DELETE FROM links_saved WHERE id=?`;
 
   db.run(sql, id, (err) => {
     if (err) return console.log(err.message);
-    console.log(`A link deleted: ${id}`);
+    console.log(`Link deleted: ${id}`);
   });
 
   db.close((err) => {
     if (err) return console.error(err.message);
-    console.log('Close the database connection.\n');
+    console.log('Operation finished\n');
   });
 
   return res.redirect('/');
