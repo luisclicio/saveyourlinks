@@ -1,0 +1,166 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+:root {
+  --color-one: #dee4e8;
+  --color-two: #08090a;
+  --color-three: #4f7fa2;
+  --color-four: #46b09c;
+  --color-five: #b90c3d;
+}
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-one);
+  color: var(--color-two);
+}
+
+/* GLOBAL */
+button {
+  cursor: pointer;
+}
+
+.nav-bar,
+.nav-actions,
+.search-form,
+.add-link,
+.add-link-form {
+  display: flex;
+  align-items: center;
+}
+
+/* NAVBAR */
+.nav-bar {
+  background: var(--color-two);
+  justify-content: space-between;
+  padding: 10px 100px;
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+
+.logo a {
+  color: var(--color-one);
+  font-size: 2em;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.search-form {
+  background: var(--color-one);
+  border-radius: 20px;
+  height: 40px;
+  padding: 5px;
+}
+
+.input-search {
+  background: transparent;
+  border: none;
+  border-radius: 15px;
+  color: var(--color-two);
+  font-size: 1.8em;
+  height: 30px;
+  padding: 0 5px;
+}
+
+.input-search::placeholder {
+  color: var(--color-two);
+}
+
+.btn-search {
+  background: var(--color-two);
+  border: none;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+}
+
+.btn-search i {
+  color: var(--color-one);
+  font-size: 1.2em;
+}
+
+.nav-btns {
+  margin-left: 20px;
+}
+
+.nav-btns > * {
+  background: var(--color-two);
+  border: none;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+}
+
+.nav-btns > * i {
+  color: var(--color-one);
+  font-size: 30px;
+}
+
+/* ADD LINK */
+.add-link {
+  background: var(--color-one);
+  justify-content: center;
+  padding: 20px 100px;
+  position: sticky;
+  top: 60px;
+}
+
+.add-link-form {
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.input-add-link {
+  background: var(--color-one);
+  border: 2px solid var(--color-two);
+  border-radius: 20px;
+  color: var(--color-two);
+  font-size: 1.8em;
+  height: 40px;
+  margin-right: 10px;
+  max-width: 400px;
+  padding: 5px 10px;
+  width: 100%;
+}
+
+.input-add-link:focus {
+  background: var(--color-two);
+  color: var(--color-one);
+}
+
+.input-add-link::placeholder {
+  color: var(--color-two);
+}
+
+.input-add-link:focus::placeholder {
+  color: var(--color-one);
+}
+
+.btn-add {
+  border: none;
+  border-radius: 50%;
+  background: var(--color-four);
+  height: 40px;
+  padding: 5px;
+  width: 40px;
+}
+
+.btn-add i {
+  color: var(--color-one);
+  font-size: 30px;
+}
+
+/* LINKS SAVED */
+.links-saved {
+  height: 100vh;
+}

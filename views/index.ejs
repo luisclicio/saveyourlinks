@@ -3,11 +3,69 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%= title %> | DarkTechLC</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <script defer src="js/script.js"></script>
+    <title>SaveYourLinks | DarkTechLC</title>
+    <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
-    <h1><%= title %></h1>
+    <main>
+      <header>
+        <form action="/search" method="get" class="search">
+          <button type="submit" class="button-left">
+            <img src="/assets/search.svg" alt="Search links" />
+          </button>
+          <input
+            type="search"
+            placeholder="Search links..."
+            name="search"
+            class="input-left"
+            required
+          />
+        </form>
+
+        <img
+          src="/assets/logo.png"
+          alt="Logomarca SaveYourLinks"
+          class="logo"
+        />
+
+        <form action="/" method="post" class="add-link">
+          <input
+            type="url"
+            placeholder="Add link..."
+            name="url"
+            class="input-right"
+            required
+          />
+          <button type="submit" class="button-right">
+            <img src="/assets/plus.svg" alt="Add link" />
+          </button>
+        </form>
+      </header>
+
+      <ul class="links">
+        <li class="link">
+          <a href="#" class="title">DarkTechlc</a>
+          <p class="description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </p>
+        </li>
+
+        <li class="link">
+          <a href="#" class="title">DarkTechlc</a>
+          <p class="description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
+            corrupti eaque architecto quae omnis nam dolor soluta ipsam
+            accusantium nihil earum quo beatae, ratione voluptas et repellendus
+            deserunt minus totam.
+          </p>
+        </li>
+      </ul>
+    </main>
+    <footer>
+      <p>
+        SaveYourLinks by
+        <a href="#" target="_blank" rel="noopener noreferrer">DarkTechLC</a>
+      </p>
+    </footer>
   </body>
 </html>
