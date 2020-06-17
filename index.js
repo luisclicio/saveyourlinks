@@ -38,6 +38,6 @@ db.close((err) => {
 app.listen(PORT, (err) => {
 	if (err) return err;
 	const url = `http://localhost:${PORT}`;
-	// openLinkInBrowser(url);
-	console.log(`Running in ${url}`);
+	openLinkInBrowser(url);
+	console.log(`\n ==> Welcome! SaveYourLinks running in ${url}`);
 });
