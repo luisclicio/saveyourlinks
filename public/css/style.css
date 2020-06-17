@@ -30,6 +30,16 @@ a {
   text-decoration: none;
 }
 
+button {
+  cursor: pointer;
+}
+
+form input,
+a.button-back {
+  max-width: 250px;
+  width: 100%;
+}
+
 li {
   list-style: none;
 }
@@ -63,6 +73,7 @@ header {
 }
 
 .logo {
+  align-self: center;
   height: 50px;
 }
 
@@ -78,7 +89,6 @@ form button {
 
 form button {
   border: none;
-  cursor: pointer;
   filter: brightness(0.95);
   height: 32px;
   width: 32px;
@@ -99,6 +109,21 @@ form button.button-right {
   background-color: var(--color-four);
   border-left: none;
   border-radius: 0 8px 8px 0;
+}
+
+header a.button-back {
+  align-items: center;
+  background-color: var(--color-four);
+  border-radius: 8px;
+  color: var(--color-one);
+  display: flex;
+  height: 32px;
+  justify-content: center;
+  padding: 8px;
+}
+
+header a.button-back span {
+  margin-left: 8px;
 }
 
 form input {
@@ -150,6 +175,7 @@ li.link {
   border-radius: 8px;
   margin-top: 16px;
   padding: 25px;
+  position: relative;
   transition: box-shadow 400ms;
 }
 
@@ -157,6 +183,14 @@ li.link:hover,
 li.link:active {
   border: none;
   box-shadow: 0 0 8px var(--color-two);
+}
+
+li.link .button-delete {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  right: 25px;
+  top: 25px;
 }
 
 li.link .title {

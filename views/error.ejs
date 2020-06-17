@@ -9,11 +9,30 @@
   <body>
     <main>
       <header>
+        <form action="/search" method="get" class="search">
+          <button type="submit" class="button-left">
+            <img src="/assets/search.svg" alt="Search links" />
+          </button>
+
+          <input
+            type="search"
+            placeholder="Search links..."
+            name="keywords"
+            class="input-left"
+            required
+          />
+        </form>
+
         <img
           src="/assets/logo.png"
           alt="Logomarca SaveYourLinks"
           class="logo"
         />
+
+        <a href="/" class="button-back">
+          <img src="/assets/arrow-left.svg" alt="Button back" />
+          <span>Back to home</span>
+        </a>
       </header>
 
       <section class="message">
@@ -21,11 +40,6 @@
         <!-- <h3><%= error %></h3> -->
 
         <img src="/assets/sad.svg" alt="Error" />
-
-        <a href="/" class="button-back">
-          <img src="/assets/arrow-left.svg" alt="Button back" />
-          <span>Back to home</span>
-        </a>
       </section>
     </main>
     <footer>

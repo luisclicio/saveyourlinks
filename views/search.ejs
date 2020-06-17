@@ -13,11 +13,13 @@
           <button type="submit" class="button-left">
             <img src="/assets/search.svg" alt="Search links" />
           </button>
+
           <input
             type="search"
             placeholder="Search links..."
-            name="search"
+            name="keywords"
             class="input-left"
+            value="<%= keywords %>"
             required
           />
         </form>
@@ -28,31 +30,40 @@
           class="logo"
         />
 
-        <form action="/" method="post" class="add-link">
-          <input
-            type="url"
-            placeholder="Add link..."
-            name="url"
-            class="input-right"
-            required
-          />
-          <button type="submit" class="button-right">
-            <img src="/assets/plus.svg" alt="Add link" />
-          </button>
-        </form>
+        <a href="/" class="button-back">
+          <img src="/assets/arrow-left.svg" alt="Button back" />
+          <span>Back to home</span>
+        </a>
       </header>
 
       <ul class="links">
         <% rows.forEach((row) => { %>
-        <li class="link">
-          <a href="<%= row.url %>" class="title"><%= row.title %></a>
+        <li class="link" data-id="<%= row.id %>">
+          <a href="/delete/<%= row.id %>" class="button-delete">
+            <img src="/assets/trash.svg" alt="" />
+          </a>
+
+          <a
+            href="<%= row.url %>"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="title"
+          >
+            <%= row.title %>
+          </a>
+
+          <% if (row.description) { %>
           <p class="description">
             <%= row.description %>
           </p>
+          <% } %>
         </li>
         <% }); %>
 
         <!-- <li class="link">
+          <button class="button-delete">
+            <img src="/assets/trash.svg" alt="" />
+          </button>
           <a href="#" class="title">DarkTechlc</a>
           <p class="description">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda

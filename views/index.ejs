@@ -13,10 +13,11 @@
           <button type="submit" class="button-left">
             <img src="/assets/search.svg" alt="Search links" />
           </button>
+
           <input
             type="search"
             placeholder="Search links..."
-            name="search"
+            name="keywords"
             class="input-left"
             required
           />
@@ -36,6 +37,7 @@
             class="input-right"
             required
           />
+
           <button type="submit" class="button-right">
             <img src="/assets/plus.svg" alt="Add link" />
           </button>
@@ -44,7 +46,11 @@
 
       <ul class="links">
         <% rows.forEach((row) => { %>
-        <li class="link">
+        <li class="link" data-id="<%= row.id %>">
+          <a href="/delete/<%= row.id %>" class="button-delete">
+            <img src="/assets/trash.svg" alt="" />
+          </a>
+
           <a
             href="<%= row.url %>"
             target="_blank"
@@ -63,6 +69,9 @@
         <% }); %>
 
         <!-- <li class="link">
+          <button class="button-delete">
+            <img src="/assets/trash.svg" alt="" />
+          </button>
           <a href="#" class="title">DarkTechlc</a>
           <p class="description">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
