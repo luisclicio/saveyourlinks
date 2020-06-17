@@ -45,20 +45,10 @@
       <ul class="links">
         <% rows.forEach((row) => { %>
         <li class="link">
-          <a
-            href="<%= row.url %>"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="title"
-          >
-            <%= row.title %>
-          </a>
-
-          <% if (row.description) { %>
+          <a href="<%= row.url %>" class="title"><%= row.title %></a>
           <p class="description">
             <%= row.description %>
           </p>
-          <% } %>
         </li>
         <% }); %>
 

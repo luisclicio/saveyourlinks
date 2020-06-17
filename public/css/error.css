@@ -1,0 +1,37 @@
+@import "./style.css";
+
+header {
+  justify-content: center;
+}
+
+section.message {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 100px);
+  justify-content: space-between;
+  padding: 100px 25px;
+}
+
+h3 {
+  color: var(--color-five);
+  font-size: 40px;
+}
+
+a.button-back {
+  align-items: center;
+  background-color: var(--color-four);
+  border-radius: 8px;
+  color: var(--color-one);
+  display: flex;
+  font-size: 24px;
+  font-weight: bold;
+  justify-content: center;
+  margin-top: 32px;
+  max-width: 300px;
+  padding: 16px;
+}
+
+a.button-back span {
+  margin-left: 8px;
+}

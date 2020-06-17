@@ -7,7 +7,7 @@ module.exports = (req, res) => {
 
   rp(url)
     .then((html) => {
-      const title = $('title', html).text();
+      let title = $('title', html).text();
       const metas = $('meta', html);
       let description = '';
 
@@ -21,6 +21,8 @@ module.exports = (req, res) => {
           break;
         }
       }
+
+      if (!title) title = url;
 
       return [url, title, description];
     })
@@ -40,9 +42,11 @@ module.exports = (req, res) => {
       db.close((err) => {
         if (err) return console.error(err.message);
         console.log('Close the database connection.\n');
+        return res.redirect('/');
       });
     })
-    .catch((err) => { return console.error(err) });
-
-  return res.redirect('/');
+    .catch((err) => {
+      console.error(err);
+      return res.render('error', { message: 'Unable to save link.', error: err.cause });
+    });
 }
