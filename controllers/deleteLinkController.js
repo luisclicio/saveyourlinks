@@ -8,11 +8,11 @@ module.exports = (req, res) => {
     console.log('Delete: Connected to the links database.');
   });
 
-  const sql = `INSERT INTO links_saved (url, title, description) VALUES (?, ?, ?)`;
+  const sql = `DELETE FROM links_saved WHERE id=?`;
 
-  db.run(sql, data, (err) => {
+  db.run(sql, id, (err) => {
     if (err) return console.log(err.message);
-    console.log(`A link saved: ${data[0]}`);
+    console.log(`A link deleted: ${id}`);
   });
 
   db.close((err) => {
